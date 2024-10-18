@@ -1,0 +1,355 @@
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: "Montserrat", sans-serif;
+    --second-family: "Open Sans", sans-serif;
+    --third-family: "Roboto", sans-serif;
+    --dark: #2c3b45;
+    --akcent: #1e92e7;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul>li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Наследовать цвет от родителя */
+/* Убрать нижнее подчеркивание */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Цвет фона прозрачный */
+/* Нет границ */
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+
+
+
+
+/* Скрывает все за пределами wrapper */
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    font-family: var(--font-family)
+}
+
+.section-title {
+    font-weight: 600;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.btn {
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--akcent);
+    color: #FFFFFF;
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 18px;
+    padding: 14px 35px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #2173ad;
+    color: #bebebe;
+}
+
+.btn--transparent {
+    border: 1px solid var(--akcent);
+    background-color: transparent;
+    color: #000;
+}
+
+/* End Общие стили */
+
+/* Общие стили */
+.container {
+    max-width: 1260px;
+    margin: 0 auto;
+    /* или margin-inline: auto */
+    padding: 0px 40px;
+}
+
+.header {
+    width: 100%;
+    padding-top: 30px;
+    position: absolute;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-image: url(../img/icons/logo2.png)
+}
+
+.nav {
+    background-color: #404F59;
+    border-radius: 0px 0px 10px 10px;
+    padding: 20px 40px;
+    font-family: var(--second-family);
+    margin-top: -30px;
+
+}
+
+.nav__list {
+    display: flex;
+    gap: 30px;
+    color: #FFFFFF;
+}
+
+.phon {
+    font-weight: 700;
+    font-size: 16px;
+    color: #7A7A7A;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.phon::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/icons/tel.svg);
+    /* Чтобы была одна */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+.phon span {
+    color: #FFFFFF;
+}
+
+.hero {
+    background-color: var(--dark);
+    border-bottom: 50px solid var(--akcent);
+    background-image: url(../img/hero/decor.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 134px;
+}
+
+.hero__container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.hero__contant {
+    flex: 1;
+    padding-top: 92px;
+}
+
+.address {
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--akcent);
+    margin-bottom: 35px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+}
+
+.address::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/icons/clarity_map-marker-solid.svg);
+    /* Чтобы была одна */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #A3A3A3;
+    margin-bottom: 47px;
+}
+
+
+.hero__img-wrap {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 5px 0 0 0;
+    position: relative;
+}
+
+/* Блок с облаками */
+.hero__img-wrap::before {
+    content: "";
+    display: block;
+    background-image: url(../img/hero/sky.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100vw;
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* фон за облаками */
+.hero__img-wrap::after {
+    content: "";
+    display: block;
+    background-color: #404F59;
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    height: 100%;
+    width: 100vw;
+    border-radius: inherit;
+    z-index: 0;
+
+
+}
+
+.hero__img {
+    max-height: 95%;
+    position: relative;
+    z-index: 15;
+}
+
+.arenda {
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
+
+.section-title {}
+
+.rent__title {}
+
+.rent__btns {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.btn {}
+
+.btn--transparent {
+    border: 1px solid var(--akcent);
+    background-color: transparent;
+    color: #000;
+}
+
+.rent__btn {}
+
+.rent-btn--active {}
+
+.offers {}
+
+.offers__container {
+    position: relative;
+}
+
+.control {}
+
+.offers__control {
+    position: absolute;
+    top: 207px;
+
+}
+
+.offers__control--prev {}
+
+.offer__list {
+    display: flex;
+    gap: 20px;
+}
+
+.offer {}
+
+.offer__content {}
+
+.offer__img {}
+
+.offer__info {}
+
+.offer__info-list {}
+
+.offer__info-item {}
+
+.offer__info-desk {}
+
+.offer__info-value {}
+
+.offer__info-value-true {}
+
+.offer__btn {}
+
+.offer__info-value--true {}
+
+.slider-indicators {}
+
+.offers__indicators {}
+
+.slider-indicator {}
+
+.active {}
